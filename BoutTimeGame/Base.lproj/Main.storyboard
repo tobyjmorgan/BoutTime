@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="97" y="139"/>
         </scene>
-        <!--View Controller-->
+        <!--Score View Controller-->
         <scene sceneID="jjl-uA-aMq">
             <objects>
-                <viewController id="5cO-IE-8h6" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScoreViewController" id="5cO-IE-8h6" customClass="ScoreViewController" customModule="BoutTimeGame" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dGj-T8-gBe"/>
                         <viewControllerLayoutGuide type="bottom" id="gsd-sK-aww"/>
@@ -38,12 +38,45 @@
                     <view key="view" contentMode="scaleToFill" id="c3c-l1-wPJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cc4-zu-cRk">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHD-Ed-Lcv">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="6Wt-22-AhI"/>
+                                            <constraint firstAttribute="height" constant="30" id="fTU-s8-aGM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4/6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qI3-ME-eSv" userLabel="Score Label">
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUE-gi-1Xs">
+                                        <state key="normal" image="play_again"/>
+                                        <connections>
+                                            <action selector="onPlayAgain" destination="5cO-IE-8h6" eventType="touchUpInside" id="5Bp-t5-ktl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.066666666669999999" green="0.1176470588" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="cc4-zu-cRk" firstAttribute="centerX" secondItem="c3c-l1-wPJ" secondAttribute="centerX" id="7md-bV-nM4"/>
+                            <constraint firstItem="cc4-zu-cRk" firstAttribute="centerY" secondItem="c3c-l1-wPJ" secondAttribute="centerY" id="hdq-J7-FnP"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="qI3-ME-eSv" id="HKW-S2-gUZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LrM-mD-kWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="97" y="855"/>
+            <point key="canvasLocation" x="97" y="853"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="iOK-0c-mfM">
@@ -126,6 +159,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="webview_bar" width="16" height="16"/>
+        <image name="play_again" width="225" height="71"/>
+        <image name="webview_bar" width="666" height="83"/>
     </resources>
 </document>
