@@ -36,6 +36,7 @@ class BoutTimeModel {
     var score: Int = 0
     var timerSecondsRemaining: Int = 0
     var currentRoundsEvents: [HistoricalEvent] = []
+    var lastSelectedEvent: HistoricalEvent? = nil
     
     // array of all available historical events
     let allEvents: [HistoricalEvent] = [
@@ -51,11 +52,12 @@ class BoutTimeModel {
     ]
     
     // reset the game model ready for the next go-around
-    func resetGame() {
+    func resetGameForNextRound() {
         roundsPlayed = 0
         score = 0
         resetTimer()
         currentRoundsEvents = []
+        lastSelectedEvent = nil
     }
     
     // reset the timer

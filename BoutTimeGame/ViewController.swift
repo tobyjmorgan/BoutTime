@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
 
+    let model = BoutTimeModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -21,5 +23,35 @@ class ViewController: UIViewController {
     }
 
 
+    
+    
+    
+    ///////////////////////////////////////////////////////////////////////////
+    // MARK: ScoreViewDelegate
+    func getCurrentScore() -> Int {
+        return model.score
+    }
+    
+    func getRoundsPlayed() -> Int {
+        return model.roundsPlayed
+    }
+    
+    func onPlayAgain() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    ///////////////////////////////////////////////////////////////////////////
+    // MARK: WebViewDelegate
+    func getContentURL() -> URL? {
+        
+        return model.lastSelectedEvent?.detailsURL
+    }
+    
+    func onWebViewDismiss() {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
