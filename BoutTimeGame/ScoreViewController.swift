@@ -8,6 +8,8 @@
 
 import UIKit
 
+// defining delegate protocol so this view controller can
+// maintain a loose relationship with whatever called it
 protocol ScoreViewDelegate {
     func getCurrentScore() -> Int
     func getRoundsPlayed() -> Int
@@ -16,10 +18,13 @@ protocol ScoreViewDelegate {
 
 class ScoreViewController: UIViewController {
     
+    // optional delegate property which must conform to our protocol
     var delegate: ScoreViewDelegate?
     
+    // outlet needed for the score label, so we can update its text
     @IBOutlet var scoreLabel: UILabel!
     
+    // just call our delegate's equivalent method to handle the response
     @IBAction func onPlayAgain() {
         delegate?.onPlayAgain()
     }
@@ -27,13 +32,14 @@ class ScoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // get the information from the delegate and update the label
+        // get the information we need from the delegate and update the label
         if let delegate = delegate {
             
             scoreLabel.text = "\(delegate.getCurrentScore())/\(delegate.getRoundsPlayed())"
             
         } else {
             
+            // if the delegate was not set, then there's not much we can do
             scoreLabel.text = "?/?"
         }
     }
