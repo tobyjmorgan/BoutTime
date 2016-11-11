@@ -108,9 +108,9 @@
 	</dict>
 	<dict>
 		<key>eventDescription</key>
-		<string>Thomas Bayes publishes the first version of Bayes&apos; theorem, paving the way for Bayesian probability</string>
+		<string>Thomas Bayes publishes the first version of Bayes&apos; theorem</string>
 		<key>year</key>
-		<integer>1763</integer>
+		<real>1763</real>
 		<key>detailsURL</key>
 		<string>https://en.wikipedia.org/wiki/Thomas_Bayes</string>
 	</dict>

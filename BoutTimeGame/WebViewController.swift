@@ -1,4 +1,4 @@
-    //
+//
 //  WebViewController.swift
 //  BoutTimeGame
 //
@@ -20,7 +20,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     // optional delegate property which must conform to our protocol
     var delegate: WebViewDelegate? = nil
     
-    // our outlets
+    // outlets
     @IBOutlet var webView: UIWebView!
 
     // the failure label will only appear if the delegate was not set, if the url was
@@ -48,7 +48,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         activityIndicator.startAnimating()
         failureLabel.isHidden = true
         
-        // get the information we need from the delegate and update the web view
+        // get the information we need from the delegate and load the link in the web view
         if let url = delegate?.getContentURL() {
             
             let urlRequest = URLRequest(url: url)

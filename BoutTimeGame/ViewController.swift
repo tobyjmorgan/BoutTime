@@ -26,7 +26,7 @@ class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
     @IBOutlet var eventLabels: [UILabel]!
     @IBOutlet var directionButtons: [UIButton]!
     @IBOutlet var eventContainers: [UIView]!
-    
+    @IBOutlet var eventYearLabels: [UILabel]!
     
     /////////////////////////////////////////////////////////////////////////////
     // MARK: IBActions
@@ -203,6 +203,7 @@ class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
         refreshTimerLabel()
         disableEventButtons()
         disableDirectionButtons()
+        hideYearLabels()
         
         nextRoundSuccess.isHidden = true
         nextRoundFailure.isHidden = true
@@ -221,6 +222,7 @@ class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
         
         disableEventButtons()
         enableDirectionButtons()
+        hideYearLabels()
         
         // ask the model to set up an event set
         model.setUpEventSet()
@@ -253,11 +255,38 @@ class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
         for label in eventLabels {
             
             // since with IBOutlet collections we cannot be sure of the order of
-            // its members, each button has been tagged with an integer between 0...3
+            // its members, each label has been tagged with an integer between 0...3
             // rather than using the label's implicit order, we will use this tag
             // as the index to use when fetching the event from the model
             if model.currentRoundsEvents.indices.contains(label.tag) {
+                
                 label.text = model.currentRoundsEvents[label.tag].eventDescription
+            }
+        }
+        
+        for yearLabel in eventYearLabels {
+            
+            // since with IBOutlet collections we cannot be sure of the order of
+            // its members, each label has been tagged with an integer between 0...3
+            // rather than using the label's implicit order, we will use this tag
+            // as the index to use when fetching the event from the model
+            if model.currentRoundsEvents.indices.contains(yearLabel.tag) {
+                
+                let suffix: String
+                var year = model.currentRoundsEvents[yearLabel.tag].year
+                
+                // if negative use BCE instead
+                if year < 0 {
+                    
+                    suffix = " BCE"
+                    year = year * -1
+                    
+                } else {
+                    
+                    suffix = ""
+                }
+                
+                yearLabel.text = "\(year)" + suffix
             }
         }
     }
@@ -364,6 +393,7 @@ class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
         
         disableDirectionButtons()
         enableEventButtons()
+        showYearLabels()
         
         if model.isCurrentRoundOrderedCorrectly() {
             
@@ -402,6 +432,26 @@ class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
 
             // do whatever needs to be done for the end of the round
             handleEndOfRound()
+        }
+    }
+
+    
+    
+    
+    ///////////////////////////////////////////////////////////////////////////
+    // MARK: year label handling
+    
+    func showYearLabels() {
+        
+        for label in eventYearLabels {
+            label.isHidden = false
+        }
+    }
+    
+    func hideYearLabels() {
+        
+        for label in eventYearLabels {
+            label.isHidden = true
         }
     }
 
