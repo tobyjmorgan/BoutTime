@@ -181,6 +181,9 @@ class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
         nextRoundFailure.isHidden = true
         nextRoundSuccess.isHidden = true
         
+        shakeLabel.text = "Shake to complete"
+        shakeLabel.isHidden = false
+        
         disableEventButtons()
         enableDirectionButtons()
         
@@ -316,6 +319,9 @@ class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
     func handleEndOfRound() {
         
         model.gameState = .betweenRounds
+        
+        shakeLabel.text = "Tap events to learn more"
+        shakeLabel.isHidden = false
         
         disableDirectionButtons()
         enableEventButtons()

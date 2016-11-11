@@ -55,14 +55,15 @@ extension HistoricalEvent: DictionaryEncodableDecodable {
         guard
             let eventDescription    = fromDictionary[HistoricalEvent.eventDescriptionKey] as? String,
             let year                = fromDictionary[HistoricalEvent.yearKey] as? Int,
-            let detailsURLString    = fromDictionary[HistoricalEvent.detailsURLKey] as? String else {
+            let detailsURLString    = fromDictionary[HistoricalEvent.detailsURLKey] as? String,
+            let detailsURL          = URL(string: detailsURLString) else {
                 
             throw DictionaryDecodingError.dictionaryNotValid(fromDictionary)
         }
         
         self.eventDescription = eventDescription
         self.year = year
-        self.detailsURL = URL(fileURLWithPath:detailsURLString)
+        self.detailsURL = detailsURL
     }
 }
 

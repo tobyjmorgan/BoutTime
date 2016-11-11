@@ -1,4 +1,4 @@
-//
+    //
 //  WebViewController.swift
 //  BoutTimeGame
 //
@@ -15,16 +15,20 @@ protocol WebViewDelegate {
 
 import UIKit
 
-class WebViewController: UIViewController {
+class WebViewController: UIViewController, UIWebViewDelegate {
     
     // optional delegate property which must conform to our protocol
     var delegate: WebViewDelegate? = nil
     
     // our outlets
-    // the failure label will only appear if the delegate was not set
-    // or if the url was not provided
     @IBOutlet var webView: UIWebView!
+
+    // the failure label will only appear if the delegate was not set, if the url was
+    // not provided, or if the url fails to load
     @IBOutlet var failureLabel: UILabel!
+    
+    // activity indicator to let the user know we are trying to load the details
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
  
     // just call our delegate's equivalent method to handle the response
     @IBAction func onDismiss() {
@@ -36,10 +40,16 @@ class WebViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
+        // we are the webview's delegate, this allows us to track when
+        // the url is successfully loaded, or if it fails
+        webView.delegate = self
+        
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+        failureLabel.isHidden = true
+        
         // get the information we need from the delegate and update the web view
         if let url = delegate?.getContentURL() {
-            
-            failureLabel.isHidden = true
             
             let urlRequest = URLRequest(url: url)
             webView.loadRequest(urlRequest)
@@ -49,6 +59,8 @@ class WebViewController: UIViewController {
             // if the delegate was not set, or if the url was not provided
             // then there's not much we can do
             failureLabel.isHidden = false
+            activityIndicator.isHidden = true
+            activityIndicator.stopAnimating()
         }
     }
     
@@ -57,15 +69,21 @@ class WebViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        
+        // great we loaded the page, turn off the indicator
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
+    }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+
+        // bummer, we couldn't load the page, turn off the indicator
+        // and display a message
+        failureLabel.isHidden = false
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
+    }
     
 }

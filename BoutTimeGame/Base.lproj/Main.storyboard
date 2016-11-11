@@ -401,7 +401,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="47m-R3-fdS">
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="47m-R3-fdS">
                                 <color key="backgroundColor" red="0.36078431372549019" green="0.38823529411764707" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="webview_bar" translatesAutoresizingMaskIntoConstraints="NO" id="elp-PB-DX8">
@@ -425,6 +425,7 @@
                                 <color key="textColor" red="0.69803921570000005" green="0.16862745100000001" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hPq-yd-Tt4"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -440,10 +441,13 @@
                             <constraint firstItem="0b5-SR-mkX" firstAttribute="top" secondItem="gQ2-7m-Cb3" secondAttribute="top" id="eY9-ce-IgT"/>
                             <constraint firstItem="vPo-2F-5yc" firstAttribute="width" secondItem="47m-R3-fdS" secondAttribute="width" multiplier="0.8" id="kjl-EP-dBx"/>
                             <constraint firstItem="vPo-2F-5yc" firstAttribute="centerX" secondItem="gQ2-7m-Cb3" secondAttribute="centerX" id="lFY-nU-tx6"/>
+                            <constraint firstItem="hPq-yd-Tt4" firstAttribute="centerX" secondItem="gQ2-7m-Cb3" secondAttribute="centerX" id="ljl-Rm-Wbj"/>
                             <constraint firstItem="elp-PB-DX8" firstAttribute="leading" secondItem="gQ2-7m-Cb3" secondAttribute="leading" id="mjD-qU-mSf"/>
+                            <constraint firstItem="hPq-yd-Tt4" firstAttribute="centerY" secondItem="gQ2-7m-Cb3" secondAttribute="centerY" id="xQK-w8-c77"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="hPq-yd-Tt4" id="Rv6-Bo-zJI"/>
                         <outlet property="failureLabel" destination="vPo-2F-5yc" id="Mtr-Ip-a7G"/>
                         <outlet property="webView" destination="47m-R3-fdS" id="QlT-F1-Ms0"/>
                     </connections>
