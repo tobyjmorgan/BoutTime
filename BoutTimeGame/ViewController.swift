@@ -184,6 +184,8 @@ class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        // using a delegate pattern to pass info to presented views
+        // so have to let them know this object will be the delegate
         if let scoreVC = segue.destination as? ScoreViewController {
             scoreVC.delegate = self
         } else if let webVC = segue.destination as? WebViewController {
