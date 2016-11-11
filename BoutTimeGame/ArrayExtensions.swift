@@ -16,7 +16,7 @@ extension Array {
         guard self.count > 1 && firstElementIndex != secondElementIndex &&
             self.indices.contains(firstElementIndex) &&
             self.indices.contains(secondElementIndex) else {
-                return
+            return
         }
         
         let temp: Element = self[firstElementIndex]

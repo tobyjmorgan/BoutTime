@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>eventDescription</key>
+		<string>Alexander Graham Bell patented his telephone</string>
+		<key>year</key>
+		<integer>1876</integer>
+		<key>detailsURL</key>
+		<string>https://en.wikipedia.org/wiki/Alexander_Graham_Bell</string>
+	</dict>
+	<dict>
+		<key>eventDescription</key>
+		<string>Wright brothers fly the &apos;Wright Flyer I&apos;</string>
+		<key>year</key>
+		<real>1903</real>
+		<key>detailsURL</key>
+		<string>https://en.wikipedia.org/wiki/Wright_brothers</string>
+	</dict>
+	<dict>
+		<key>eventDescription</key>
+		<string>Hanaoka Seishū develops general anaesthesia</string>
+		<key>year</key>
+		<integer>1796</integer>
+		<key>detailsURL</key>
+		<string>https://en.wikipedia.org/wiki/Hanaoka_Seishū</string>
+	</dict>
+	<dict>
+		<key>eventDescription</key>
+		<string>Michael Faraday discovers electromagnetic induction</string>
+		<key>year</key>
+		<integer>1831</integer>
+		<key>detailsURL</key>
+		<string>https://en.wikipedia.org/wiki/Michael_Faraday</string>
+	</dict>
+	<dict>
+		<key>eventDescription</key>
+		<string>Evangelista Torricelli invents the mercury barometer</string>
+		<key>year</key>
+		<integer>1643</integer>
+		<key>detailsURL</key>
+		<string>https://en.wikipedia.org/wiki/Evangelista_Torricelli</string>
+	</dict>
+	<dict>
+		<key>eventDescription</key>
+		<string>Robert Hooke: Discovers the Cell</string>
+		<key>year</key>
+		<integer>1665</integer>
+		<key>detailsURL</key>
+		<string>https://en.wikipedia.org/wiki/Robert_Hooke</string>
+	</dict>
+	<dict>
+		<key>eventDescription</key>
+		<string>Sir Isaac Newton: discovers that white light is a spectrum of a mixture of distinct coloured rays</string>
+		<key>year</key>
+		<integer>1672</integer>
+		<key>detailsURL</key>
+		<string>https://en.wikipedia.org/wiki/Isaac_Newton</string>
+	</dict>
+	<dict>
+		<key>eventDescription</key>
+		<string>Sir Isaac Newton publishes the three physical laws of motion</string>
+		<key>year</key>
+		<integer>1687</integer>
+		<key>detailsURL</key>
+		<string>https://en.wikipedia.org/wiki/Isaac_Newton</string>
+	</dict>
+	<dict>
+		<key>eventDescription</key>
+		<string>William Herschel discovers infrared radiation</string>
+		<key>year</key>
+		<integer>1800</integer>
+		<key>detailsURL</key>
+		<string>https://en.wikipedia.org/wiki/William_Herschel</string>
+	</dict>
+</array>
+</plist>

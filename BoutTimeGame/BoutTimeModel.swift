@@ -38,21 +38,28 @@ class BoutTimeModel {
     var currentRoundsEvents: [HistoricalEvent] = []
     var lastSelectedEvent: HistoricalEvent? = nil
     
-    // array of all available historical events
-    let allEvents: [HistoricalEvent] = [
-        HistoricalEvent(eventDescription: "Alexander Graham Bell patented his telephone", year: 1876, detailsURL: URL(string: "https://en.wikipedia.org/wiki/Alexander_Graham_Bell")),
-        HistoricalEvent(eventDescription: "Wright brothers fly the 'Wright Flyer I'", year: 1903, detailsURL: URL(string: "https://en.wikipedia.org/wiki/Wright_brothers")),
-        HistoricalEvent(eventDescription: "Hanaoka Seishū develops general anaesthesia", year: 1796, detailsURL: URL(string: "https://en.wikipedia.org/wiki/Hanaoka_Seishū")),
-        HistoricalEvent(eventDescription: "Michael Faraday discovers electromagnetic induction", year: 1831, detailsURL: URL(string: "https://en.wikipedia.org/wiki/Michael_Faraday")),
-        HistoricalEvent(eventDescription: "Evangelista Torricelli invents the mercury barometer", year: 1643, detailsURL: URL(string: "https://en.wikipedia.org/wiki/Evangelista_Torricelli")),
-        HistoricalEvent(eventDescription: "Robert Hooke: Discovers the Cell", year: 1665, detailsURL: URL(string: "https://en.wikipedia.org/wiki/Robert_Hooke")),
-        HistoricalEvent(eventDescription: "Sir Isaac Newton: discovers that white light is a spectrum of a mixture of distinct coloured rays", year: 1672, detailsURL: URL(string: "https://en.wikipedia.org/wiki/Isaac_Newton")),
-        HistoricalEvent(eventDescription: "Sir Isaac Newton publishes the three physical laws of motion", year: 1687, detailsURL: URL(string: "https://en.wikipedia.org/wiki/Isaac_Newton")),
-        HistoricalEvent(eventDescription: "William Herschel discovers infrared radiation", year: 1800, detailsURL: URL(string: "https://en.wikipedia.org/wiki/William_Herschel"))
-    ]
+    // array to hold all available historical events
+    let allEvents: [HistoricalEvent]
+    
+    // initializer will attempt to load list of historical events from a plist
+    init() {
+        
+        do {
+            self.allEvents = try HistoricalEventPlistConverter.arrayFromFile(resource: "HistoricalEvents", ofType: "plist")
+            
+        } catch HistoricalEventPlistConverter.ConverterError.resourceNotFound {
+            fatalError("Unable to find source data file.")
+        } catch HistoricalEventPlistConverter.ConverterError.conversionError {
+            fatalError("Unexpected structure found in source file.")
+        } catch HistoricalEventPlistConverter.ConverterError.unarchivingError(let message) {
+            fatalError(message)
+        } catch {
+            fatalError("Unknown error loading source data.")
+        }
+    }
     
     // reset the game model ready for the next go-around
-    func resetGameForNextRound() {
+    func resetGame() {
         roundsPlayed = 0
         score = 0
         resetTimer()

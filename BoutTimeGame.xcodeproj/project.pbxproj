@@ -20,6 +20,13 @@
 		6BA2F6511DD0233800808C31 /* TMRGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA2F6501DD0233800808C31 /* TMRGBA.swift */; };
 		6BA2F6531DD032E800808C31 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA2F6521DD032E800808C31 /* WebViewController.swift */; };
 		6BA2F6551DD035B300808C31 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA2F6541DD035B300808C31 /* ScoreViewController.swift */; };
+		6BA2F6571DD3C29A00808C31 /* HistoricalEvents.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BA2F6561DD3C29A00808C31 /* HistoricalEvents.plist */; };
+		6BA2F6591DD4CFFB00808C31 /* DictionaryEncodableDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA2F6581DD4CFFB00808C31 /* DictionaryEncodableDecodable.swift */; };
+		6BA2F6601DD4D54300808C31 /* Correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6BA2F65C1DD4D54300808C31 /* Correct.wav */; };
+		6BA2F6611DD4D54300808C31 /* Incorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6BA2F65D1DD4D54300808C31 /* Incorrect.wav */; };
+		6BA2F6621DD4D54300808C31 /* GameSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6BA2F65E1DD4D54300808C31 /* GameSound.wav */; };
+		6BA2F6631DD4D54300808C31 /* QuizOver.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6BA2F65F1DD4D54300808C31 /* QuizOver.wav */; };
+		6BA2F6651DD4FFA900808C31 /* TimerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA2F6641DD4FFA900808C31 /* TimerHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +66,13 @@
 		6BA2F6501DD0233800808C31 /* TMRGBA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TMRGBA.swift; sourceTree = "<group>"; };
 		6BA2F6521DD032E800808C31 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		6BA2F6541DD035B300808C31 /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		6BA2F6561DD3C29A00808C31 /* HistoricalEvents.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HistoricalEvents.plist; sourceTree = "<group>"; };
+		6BA2F6581DD4CFFB00808C31 /* DictionaryEncodableDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryEncodableDecodable.swift; sourceTree = "<group>"; };
+		6BA2F65C1DD4D54300808C31 /* Correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Correct.wav; sourceTree = "<group>"; };
+		6BA2F65D1DD4D54300808C31 /* Incorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Incorrect.wav; sourceTree = "<group>"; };
+		6BA2F65E1DD4D54300808C31 /* GameSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = GameSound.wav; sourceTree = "<group>"; };
+		6BA2F65F1DD4D54300808C31 /* QuizOver.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = QuizOver.wav; sourceTree = "<group>"; };
+		6BA2F6641DD4FFA900808C31 /* TimerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,10 +131,11 @@
 				6BA2F6231DCF957700808C31 /* Assets.xcassets */,
 				6BA2F6251DCF957800808C31 /* LaunchScreen.storyboard */,
 				6BA2F6281DCF957800808C31 /* Info.plist */,
-				6BA2F6501DD0233800808C31 /* TMRGBA.swift */,
+				6BA2F6561DD3C29A00808C31 /* HistoricalEvents.plist */,
 				6BA2F64A1DD019ED00808C31 /* BoutTimeModel.swift */,
 				6BA2F64C1DD01A1E00808C31 /* HistoricalEvent.swift */,
-				6BA2F64E1DD01A5600808C31 /* ArrayExtensions.swift */,
+				6BA2F65B1DD4D52A00808C31 /* Resources */,
+				6BA2F65A1DD4D26800808C31 /* HomeGrownBits */,
 			);
 			path = BoutTimeGame;
 			sourceTree = "<group>";
@@ -141,6 +156,28 @@
 				6BA2F63E1DCF957800808C31 /* Info.plist */,
 			);
 			path = BoutTimeGameUITests;
+			sourceTree = "<group>";
+		};
+		6BA2F65A1DD4D26800808C31 /* HomeGrownBits */ = {
+			isa = PBXGroup;
+			children = (
+				6BA2F6501DD0233800808C31 /* TMRGBA.swift */,
+				6BA2F6581DD4CFFB00808C31 /* DictionaryEncodableDecodable.swift */,
+				6BA2F64E1DD01A5600808C31 /* ArrayExtensions.swift */,
+				6BA2F6641DD4FFA900808C31 /* TimerHelper.swift */,
+			);
+			name = HomeGrownBits;
+			sourceTree = "<group>";
+		};
+		6BA2F65B1DD4D52A00808C31 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6BA2F65C1DD4D54300808C31 /* Correct.wav */,
+				6BA2F65D1DD4D54300808C31 /* Incorrect.wav */,
+				6BA2F65E1DD4D54300808C31 /* GameSound.wav */,
+				6BA2F65F1DD4D54300808C31 /* QuizOver.wav */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,9 +290,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BA2F6611DD4D54300808C31 /* Incorrect.wav in Resources */,
+				6BA2F6621DD4D54300808C31 /* GameSound.wav in Resources */,
 				6BA2F6271DCF957800808C31 /* LaunchScreen.storyboard in Resources */,
 				6BA2F6241DCF957700808C31 /* Assets.xcassets in Resources */,
 				6BA2F6221DCF957700808C31 /* Main.storyboard in Resources */,
+				6BA2F6631DD4D54300808C31 /* QuizOver.wav in Resources */,
+				6BA2F6601DD4D54300808C31 /* Correct.wav in Resources */,
+				6BA2F6571DD3C29A00808C31 /* HistoricalEvents.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BA2F6511DD0233800808C31 /* TMRGBA.swift in Sources */,
+				6BA2F6651DD4FFA900808C31 /* TimerHelper.swift in Sources */,
 				6BA2F64D1DD01A1E00808C31 /* HistoricalEvent.swift in Sources */,
 				6BA2F64F1DD01A5600808C31 /* ArrayExtensions.swift in Sources */,
 				6BA2F61F1DCF957700808C31 /* ViewController.swift in Sources */,
@@ -288,6 +331,7 @@
 				6BA2F61D1DCF957700808C31 /* AppDelegate.swift in Sources */,
 				6BA2F64B1DD019ED00808C31 /* BoutTimeModel.swift in Sources */,
 				6BA2F6551DD035B300808C31 /* ScoreViewController.swift in Sources */,
+				6BA2F6591DD4CFFB00808C31 /* DictionaryEncodableDecodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
