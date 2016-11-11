@@ -22,13 +22,13 @@
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Vv1-Xe-q2r">
                                 <subviews>
-                                    <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0l2-iD-kpO">
+                                    <stackView clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0l2-iD-kpO">
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h8V-Vu-jtc">
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uB6-qW-fJC">
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.14117647059999999" green="0.36470588240000001" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxK-EE-KY7">
@@ -61,17 +61,18 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <color key="backgroundColor" red="0.69803921570000005" green="0.16862745100000001" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="fTP-Bm-mSB" firstAttribute="width" secondItem="h8V-Vu-jtc" secondAttribute="width" multiplier="0.15" id="kPo-fT-wJY"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zjo-94-2ZW">
+                                    <stackView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zjo-94-2ZW">
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B45-X9-zWD">
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pX-EC-tU6">
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.14117647059999999" green="0.36470588240000001" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iea-ML-izu">
@@ -115,17 +116,18 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="5bI-Q7-37x" firstAttribute="width" secondItem="B45-X9-zWD" secondAttribute="width" multiplier="0.15" id="QxC-Rq-rBe"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zh3-A4-SwG">
+                                    <stackView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zh3-A4-SwG">
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GLL-EF-hMV">
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SI5-Dg-4DX">
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.14117647059999999" green="0.36470588240000001" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNQ-OJ-Cot">
@@ -169,17 +171,18 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="0IW-ys-d0Y" firstAttribute="width" secondItem="GLL-EF-hMV" secondAttribute="width" multiplier="0.15" id="DIR-wu-vaa"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNv-yK-bHC">
+                                    <stackView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GNv-yK-bHC">
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zcd-nx-aDr">
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erN-9y-nD1">
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" red="0.14117647059999999" green="0.36470588240000001" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WzK-6E-qWn">
@@ -212,6 +215,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="faq-Kq-l4H" firstAttribute="width" secondItem="Zcd-nx-aDr" secondAttribute="width" multiplier="0.15" id="4ca-Ga-wE7"/>
                                         </constraints>
@@ -321,12 +325,15 @@
                         <outletCollection property="directionButtons" destination="gDO-sq-Yvx" collectionClass="NSMutableArray" id="oAh-BY-LbR"/>
                         <outletCollection property="directionButtons" destination="TP9-ly-FLR" collectionClass="NSMutableArray" id="0ih-rP-FTD"/>
                         <outletCollection property="directionButtons" destination="faq-Kq-l4H" collectionClass="NSMutableArray" id="pPI-2e-LXf"/>
-                        <outletCollection property="eventContainers" destination="0l2-iD-kpO" collectionClass="NSMutableArray" id="clj-2t-XeF"/>
                         <outletCollection property="eventButtons" destination="OxK-EE-KY7" collectionClass="NSMutableArray" id="tHk-UZ-cTf"/>
                         <outletCollection property="eventLabels" destination="uB6-qW-fJC" collectionClass="NSMutableArray" id="mCR-p7-yq1"/>
                         <outletCollection property="eventLabels" destination="1pX-EC-tU6" collectionClass="NSMutableArray" id="Szo-a3-his"/>
                         <outletCollection property="eventLabels" destination="SI5-Dg-4DX" collectionClass="NSMutableArray" id="jRt-Qj-p3q"/>
                         <outletCollection property="eventLabels" destination="erN-9y-nD1" collectionClass="NSMutableArray" id="5D1-IE-gIV"/>
+                        <outletCollection property="eventContainers" destination="h8V-Vu-jtc" collectionClass="NSMutableArray" id="LJT-Mt-R2f"/>
+                        <outletCollection property="eventContainers" destination="B45-X9-zWD" collectionClass="NSMutableArray" id="UfR-Dd-NEP"/>
+                        <outletCollection property="eventContainers" destination="GLL-EF-hMV" collectionClass="NSMutableArray" id="Xkw-rK-Tik"/>
+                        <outletCollection property="eventContainers" destination="Zcd-nx-aDr" collectionClass="NSMutableArray" id="0EI-x4-ztF"/>
                         <segue destination="FNb-uf-bmL" kind="presentation" identifier="webViewSegue" id="pCJ-ZZ-4K3"/>
                         <segue destination="5cO-IE-8h6" kind="presentation" identifier="scoreViewSegue" id="DRu-97-LeU"/>
                     </connections>

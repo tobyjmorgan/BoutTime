@@ -74,5 +74,77 @@
 		<key>detailsURL</key>
 		<string>https://en.wikipedia.org/wiki/William_Herschel</string>
 	</dict>
+	<dict>
+		<key>eventDescription</key>
+		<string>Aristarchus of Samos used a heliocentric, heliostatic model</string>
+		<key>year</key>
+		<integer>-280</integer>
+		<key>detailsURL</key>
+		<string>https://en.wikipedia.org/wiki/Aristarchus_of_Samos</string>
+	</dict>
+	<dict>
+		<key>eventDescription</key>
+		<string>Ptolemy produced the geocentric model of the solar system</string>
+		<key>year</key>
+		<integer>150</integer>
+		<key>detailsURL</key>
+		<string>https://en.wikipedia.org/wiki/Ptolemy</string>
+	</dict>
+	<dict>
+		<key>eventDescription</key>
+		<string>Vesalius pioneered research into human anatomy</string>
+		<key>year</key>
+		<integer>1543</integer>
+		<key>detailsURL</key>
+		<string>https://en.wikipedia.org/wiki/Andreas_Vesalius</string>
+	</dict>
+	<dict>
+		<key>eventDescription</key>
+		<string> Anton van Leeuwenhoek observes Microorganisms by Microscope</string>
+		<key>year</key>
+		<integer>1675</integer>
+		<key>detailsURL</key>
+		<string>https://en.wikipedia.org/wiki/Antonie_van_Leeuwenhoek</string>
+	</dict>
+	<dict>
+		<key>eventDescription</key>
+		<string>Thomas Bayes publishes the first version of Bayes&apos; theorem, paving the way for Bayesian probability</string>
+		<key>year</key>
+		<integer>1763</integer>
+		<key>detailsURL</key>
+		<string>https://en.wikipedia.org/wiki/Thomas_Bayes</string>
+	</dict>
+	<dict>
+		<key>eventDescription</key>
+		<string>Georges Cuvier establishes extinction as a fact</string>
+		<key>year</key>
+		<integer>1796</integer>
+		<key>detailsURL</key>
+		<string>https://en.wikipedia.org/wiki/Georges_Cuvier</string>
+	</dict>
+	<dict>
+		<key>eventDescription</key>
+		<string>Anselme Payen isolates first enzyme, diastase</string>
+		<key>year</key>
+		<integer>1833</integer>
+		<key>detailsURL</key>
+		<string>https://en.wikipedia.org/wiki/Anselme_Payen</string>
+	</dict>
+	<dict>
+		<key>eventDescription</key>
+		<string>Friedrich Wohler synthesized urea, destroying vitalism</string>
+		<key>year</key>
+		<integer>1828</integer>
+		<key>detailsURL</key>
+		<string>https://en.wikipedia.org/wiki/Friedrich_Wohler</string>
+	</dict>
+	<dict>
+		<key>eventDescription</key>
+		<string>Albert Einstein developed the theory of special relativity</string>
+		<key>year</key>
+		<integer>1905</integer>
+		<key>detailsURL</key>
+		<string>https://en.wikipedia.org/wiki/Albert_Einstein</string>
+	</dict>
 </array>
 </plist>

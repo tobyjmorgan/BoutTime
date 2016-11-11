@@ -25,7 +25,7 @@ class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
     @IBOutlet var eventButtons: [UIButton]!
     @IBOutlet var eventLabels: [UILabel]!
     @IBOutlet var directionButtons: [UIButton]!
-    @IBOutlet var eventContainers: [UIStackView]!
+    @IBOutlet var eventContainers: [UIView]!
     
     
     /////////////////////////////////////////////////////////////////////////////
@@ -61,16 +61,22 @@ class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
         switch sender.tag {
             case 1:
                 model.moveElement(elementIndex: 0, direction: .down)
+                playClickSound()
             case 2:
                 model.moveElement(elementIndex: 1, direction: .up)
+                playClickSound()
             case 3:
                 model.moveElement(elementIndex: 1, direction: .down)
+                playClickSound()
             case 4:
                 model.moveElement(elementIndex: 2, direction: .up)
+                playClickSound()
             case 5:
                 model.moveElement(elementIndex: 2, direction: .down)
+                playClickSound()
             case 6:
                 model.moveElement(elementIndex: 3, direction: .up)
+                playClickSound()
             default:
                 break
         }
@@ -111,12 +117,16 @@ class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
     var correctSound: SystemSoundID = 0
     var incorrectSound: SystemSoundID = 0
     var quizOver: SystemSoundID = 0
+    var clickSound: SystemSoundID = 0
 
     // create an instance of the model
     let model = BoutTimeModel()
     
     // homegrown TimerHelper class to clean up timer usage
     var timer: TimerHelper?
+    
+    // just to keep track of whether we prompted the player yet
+    var showedTheAlert: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,13 +139,6 @@ class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
         // created and ready to use
         timer = TimerHelper(duration: 1.0, repeats: true, closure: self.decrementCounter)
         
-        // round the corners of various bits and bobs
-        startButtonView.layer.cornerRadius = 24.0
-        
-        for container in eventContainers {
-            container.layer.cornerRadius = 4.0
-        }
-        
         // set up some notification observers to handle events from the model
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.onEventsChanged), name: NSNotification.Name(rawValue: BoutTimeModel.notificationEventsReady), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.onEventsChanged), name: NSNotification.Name(rawValue: BoutTimeModel.notificationEventsChanged), object: nil)
@@ -143,6 +146,37 @@ class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
         getReadyToStartGame()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // round the corners of various bits and bobs
+        startButtonView.layer.cornerRadius = 24.0
+        
+        for container in eventContainers {
+            
+            // lovely bit of code for rounding only specific corners of a view found at:
+            // http://stackoverflow.com/questions/10167266/how-to-set-cornerradius-for-only-top-left-and-top-right-corner-of-a-uiview
+            
+            let path = UIBezierPath(roundedRect:container.bounds,
+                                    byRoundingCorners:[.topLeft, .bottomLeft],
+                                    cornerRadii: CGSize(width: 4.0, height:  4.0))
+            
+            let maskLayer = CAShapeLayer()
+            
+            maskLayer.path = path.cgPath
+            container.layer.mask = maskLayer
+        }
+        
+        if !showedTheAlert {
+            
+            let alert = UIAlertController(title: "Welcome!", message: "To play the game, arrange the historical events in order from oldest at the top, to most recent at the bottom. Good luck.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Got it!", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
+
+            showedTheAlert = true
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -168,6 +202,7 @@ class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
         clearEventDescriptions()
         refreshTimerLabel()
         disableEventButtons()
+        disableDirectionButtons()
         
         nextRoundSuccess.isHidden = true
         nextRoundFailure.isHidden = true
@@ -283,7 +318,10 @@ class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
     // update the label with model's current value
     func refreshTimerLabel() {
         
-        timerLabel.text = String(model.timerSecondsRemaining)
+        let minutes = Int(model.timerSecondsRemaining / 60)
+        let seconds = Int(model.timerSecondsRemaining % 60)
+        
+        timerLabel.text = "\(minutes):\(String(format: "%02d", seconds))"
     }
     
     func decrementCounter() {
@@ -294,6 +332,8 @@ class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
         // check to see if we have run out of time
         if model.timerSecondsRemaining <= 0 {
             
+            refreshTimerLabel()
+            
             // ensure seconds remaining never drops below zero
             model.timerSecondsRemaining = 0
             
@@ -302,8 +342,7 @@ class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
             
         } else {
             
-            // call this method again in one second
-            perform(#selector(ViewController.decrementCounter), with: nil, afterDelay: 1.0)
+            refreshTimerLabel()
         }
     }
     
@@ -459,6 +498,7 @@ class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
         loadSound(filename: "Correct", systemSound: &correctSound)
         loadSound(filename: "Incorrect", systemSound: &incorrectSound)
         loadSound(filename: "QuizOver", systemSound: &quizOver)
+        loadSound(filename: "Click", systemSound: &clickSound)
     }
     
     func playGameStartSound() {
@@ -475,6 +515,10 @@ class ViewController: UIViewController, ScoreViewDelegate, WebViewDelegate {
     
     func playQuizOverSound() {
         AudioServicesPlaySystemSound(quizOver)
+    }
+
+    func playClickSound() {
+        AudioServicesPlaySystemSound(clickSound)
     }
 }
 

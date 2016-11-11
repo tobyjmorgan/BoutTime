@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TimerHelper {
+class TimerHelper: NSObject {
     
     var timer: Timer = Timer()
     
@@ -23,7 +23,7 @@ class TimerHelper {
     }
     
     func startTimer() {
-        timer = Timer(timeInterval: duration, target: self, selector: #selector(TimerHelper.performAction), userInfo: nil, repeats: repeats)
+        timer = Timer.scheduledTimer(timeInterval: duration, target: self, selector: #selector(TimerHelper.performAction), userInfo: nil, repeats: repeats)
     }
     
     func stopTimer() {

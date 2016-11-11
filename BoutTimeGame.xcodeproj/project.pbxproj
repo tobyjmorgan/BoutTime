@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B7E24E81DD58EE2000797E3 /* Click.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6B7E24E71DD58EE2000797E3 /* Click.wav */; };
 		6BA2F61D1DCF957700808C31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA2F61C1DCF957700808C31 /* AppDelegate.swift */; };
 		6BA2F61F1DCF957700808C31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA2F61E1DCF957700808C31 /* ViewController.swift */; };
 		6BA2F6221DCF957700808C31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BA2F6201DCF957700808C31 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B7E24E71DD58EE2000797E3 /* Click.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Click.wav; sourceTree = "<group>"; };
 		6BA2F6191DCF957700808C31 /* BoutTimeGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoutTimeGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA2F61C1DCF957700808C31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BA2F61E1DCF957700808C31 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				6BA2F65D1DD4D54300808C31 /* Incorrect.wav */,
 				6BA2F65E1DD4D54300808C31 /* GameSound.wav */,
 				6BA2F65F1DD4D54300808C31 /* QuizOver.wav */,
+				6B7E24E71DD58EE2000797E3 /* Click.wav */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B7E24E81DD58EE2000797E3 /* Click.wav in Resources */,
 				6BA2F6611DD4D54300808C31 /* Incorrect.wav in Resources */,
 				6BA2F6621DD4D54300808C31 /* GameSound.wav in Resources */,
 				6BA2F6271DCF957800808C31 /* LaunchScreen.storyboard in Resources */,
@@ -582,6 +586,7 @@
 				6BA2F6431DCF957800808C31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6BA2F6441DCF957800808C31 /* Build configuration list for PBXNativeTarget "BoutTimeGameTests" */ = {
 			isa = XCConfigurationList;
@@ -590,6 +595,7 @@
 				6BA2F6461DCF957800808C31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6BA2F6471DCF957800808C31 /* Build configuration list for PBXNativeTarget "BoutTimeGameUITests" */ = {
 			isa = XCConfigurationList;
@@ -598,6 +604,7 @@
 				6BA2F6491DCF957800808C31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
